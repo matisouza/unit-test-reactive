@@ -11,14 +11,6 @@ import static org.mockito.Mockito.when;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import java.time.LocalDate;
-import java.util.Objects;
-import java.util.function.Function;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-
-
 public class BorrowResourceUseCaseTest {
 
     private ResourceMapper resourceMapper;
@@ -44,6 +36,7 @@ public class BorrowResourceUseCaseTest {
         resource.setUnitsOwed(5);
 
         Resource resourceUpdated = new Resource();
+        resourceUpdated.setName(resource.getName());
         resourceUpdated.setUnitsAvailable(9);
         resourceUpdated.setUnitsOwed(6);
 
